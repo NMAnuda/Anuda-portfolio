@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuda Senavirathne - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--bg-white);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .logo h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: all 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            background: var(--bg-light);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: var(--text-gray);
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        /* About Section */
+        .about-text p {
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--bg-light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .skill-category li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-description {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-light);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            border: 1px solid var(--border);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            flex: 1;
+            padding: 0.625rem;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .view-code {
+            background: var(--primary);
+            color: white;
+        }
+
+        .view-code:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-light);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--bg-white);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-item i {
+            font-size: 1.75rem;
+            color: var(--primary);
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .contact-item a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.2s;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-white);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-gray);
+            border-top: 1px solid var(--border);
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--bg-white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(8px, -8px);
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>AS</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Anuda Senavirathne</h1>
+                <p class="tagline">AI & ML Enthusiast | Full-Stack Developer</p>
+                <p class="description">Crafting intelligent solutions through code and machine learning</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/NMAnuda" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/anuda-senevirathna/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://medium.com/@senevirathnaanuda" target="_blank" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+                    <a href="mailto:senevirathnaanuda@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate AI & ML enthusiast with a strong foundation in full-stack development. I specialize in building intelligent applications that leverage machine learning, natural language processing, and modern web technologies.</p>
+                    <p>My expertise spans from developing ETL pipelines and RAG systems to creating end-to-end AI solutions. I'm committed to writing clean, maintainable code and implementing best practices in software development.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>16+</h3>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>20+</h3>
+                            <p>GitHub Stars</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Machine Learning</h3>
+                    <ul>
+                        <li>Deep Learning</li>
+                        <li>NLP & LLMs</li>
+                        <li>Computer Vision</li>
+                        <li>RAG Systems</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon"><i class="fas fa-code"></i></div>
+                    <h3>Backend Development</h3>
+                    <ul>
+                        <li>Python (Django, Flask ,Fast)</li>
+                        <li>RESTful APIs</li>
+                        <li>PostgreSQL</li>
+                        <li>Docker & CI/CD</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Frontend Development</h3>
+                    <ul>
+                        <li>React</li>
+                        <li>JavaScript</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon"><i class="fas fa-database"></i></div>
+                    <h3>Data Engineering</h3>
+                    <ul>
+                        <li>Apache Airflow</li>
+                        <li>ETL Pipelines</li>
+                        <li>dbt</li>
+                        <li>Data Warehousing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid" id="projectsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:senevirathnaanuda@gmail.com">senevirathnaanuda@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/anuda-senevirathna/" target="_blank">anuda-senevirathna</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/NMAnuda" target="_blank">@NMAnuda</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-medium-m"></i>
+                        <div>
+                            <h3>Medium</h3>
+                            <a href="https://medium.com/@senevirathnaanuda" target="_blank">@senevirathnaanuda</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Anuda Senavirathne. All rights reserved.</p>
+            <p>Built with passion for technology</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Projects Data
+        const projects = [
+           
+            {
+                title: "Internal Knowledge Assistant (RAG System)",
+                description: "Secure RAG-powered internal knowledge chatbot built with Django REST Framework, FAISS vector search, and OpenAI LLM. Features role-based access, chat history with confidence scores, and explainable citations.",
+                tech: ["Python", "Django", "FAISS", "OpenAI API", "REST API"],
+                url: "https://github.com/NMAnuda/-Internal_Knowledge_Assistant-RAG_System-Django-"
+            },
+            {
+                title: "Email Classifier (Deployed)",
+                description: "A secure full-stack Gmail automation powerhouse with real-time Pub/Sub webhooks for instant email pushes, Hugging Face zero-shot classification, and RoBERTa sentiment/priority analysis.",
+                tech: ["Python", "Gmail API", "Pub/Sub", "HuggingFace", "RoBERTa"],
+                url: "https://github.com/NMAnuda/email_classifier_extended"
+            },
+             {
+                title: "Data Pipeline ETL AirFlow",
+                description: "ETL & Analytics Pipeline for E-Commerce Data: A Dockerized workflow using Airflow for daily orchestration, dbt for transformations into a Postgres star schema, and MinIO for S3-compatible storage.",
+                tech: ["Python", "Airflow", "dbt", "PostgreSQL", "Docker", "MinIO"],
+                url: "https://github.com/NMAnuda/Data_pipeline_ETL_AirFlow"
+            },
+            {
+                title: "LearnLinkAI Internal System",
+                description: "An AI-driven platform using LLMs and NLP to personalize learning content from YouTube, Coursera, Udemy, Wikipedia, and arXiv. Features semantic search via Pinecone, secure JWT authentication, and real-time WebSocket delivery for tailored educational experiences across all learner levels.",
+                tech: ["Python (FastAPI)", "Next.js", "LLMs", "NLP (spaCy/BERT)", "Pinecone", "AssemblyAI", "LangGraph"],
+                url: "https://github.com/itzTiru/LearnLinkAI-internal-system-client"
+            },
+            {
+                title: "AI Medical Assistant",
+                description: "A full-stack AI healthcare assistant that helps users understand medical conditions, analyze health reports, and receive personalized drug recommendations.",
+                tech: ["Python", "Flask", "Next.js", "React", "Scikit-learn", "TensorFlow", "Google Gemini API", "NLP"],
+                url: "https://github.com/NMAnuda/AI-Enhanced_Medical_Assistant_Web_App"
+            },
+            {
+                title: "Storm Damage Prediction",
+                description: "A machine learning platform for real-time storm damage prediction, helping property owners and insurers assess risk using Gradient Boosting on historical storm and geospatial data.",
+                tech: ["Python", "Machine Learning", "Jupyter Notebook", "Streamlit", "Gradient Boosting", "Geospatial Analysis", "Pandas/Matplotlib"],
+                url: "https://github.com/NMAnuda/storm-damage-prediction-app"
+            },
+            {
+                title: "Financial Tracker Mobile App",
+                description: "A mobile financial tracker app that lets users record, view, and manage their income and expenses with an intuitive interface.",
+                tech: ["Kotlin", "Android", "Mobile"],
+                url: "https://github.com/NMAnuda/mobile-application-financial-tracker"
+            },
+            {
+                title: "Wijesundara ERP Internal System",
+                description: "Comprehensive ERP web app for Wijesundara Rice Mill, handling inventory, orders, transportation, accounting, HR, CRM, and suppliers. Includes custom tools for stock tracking, task assignment, bidding, and real-time operational efficiency across departments.",
+                tech: ["Node.js/Express", "React", "SQL/Database"],
+                url: "https://github.com/buddhika-development/wijesundara-erp-internal-system-client"
+            }
+        ];
+
+        // Render Projects
+        function renderProjects() {
+            const projectsGrid = document.getElementById('projectsGrid');
+            
+            projects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card';
+
+                projectCard.innerHTML = `
+                    <div class="project-header">
+                        <h3 class="project-title">${project.title}</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">${project.description}</p>
+                        <div class="project-tech">
+                            ${project.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                        </div>
+                        <div class="project-links">
+                            <a href="${project.url}" target="_blank" class="project-link view-code">View Code</a>
+                        </div>
+                    </div>
+                `;
+
+                projectsGrid.appendChild(projectCard);
+            });
+        }
+
+        renderProjects();
+    </script>
+</body>
+</html>
