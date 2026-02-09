@@ -22,9 +22,7 @@
             --border: #e2e8f0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -77,9 +75,7 @@
             transition: color 0.2s;
         }
 
-        .nav-link:hover {
-            color: var(--primary);
-        }
+        .nav-link:hover { color: var(--primary); }
 
         .hamburger {
             display: none;
@@ -151,9 +147,7 @@
             color: white;
         }
 
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
+        .btn-primary:hover { background: var(--primary-dark); }
 
         .btn-secondary {
             border: 2px solid var(--primary);
@@ -178,14 +172,10 @@
             transition: color 0.2s;
         }
 
-        .social-links a:hover {
-            color: var(--primary);
-        }
+        .social-links a:hover { color: var(--primary); }
 
         /* Section Styles */
-        section {
-            padding: 5rem 0;
-        }
+        section { padding: 5rem 0; }
 
         .section-title {
             font-size: 2.5rem;
@@ -237,9 +227,7 @@
         }
 
         /* Skills Section */
-        .skills {
-            background: var(--bg-light);
-        }
+        .skills { background: var(--bg-light); }
 
         .skills-grid {
             display: grid;
@@ -267,9 +255,7 @@
             font-weight: 600;
         }
 
-        .skill-category ul {
-            list-style: none;
-        }
+        .skill-category ul { list-style: none; }
 
         .skill-category li {
             padding: 0.5rem 0;
@@ -302,9 +288,7 @@
             transition: box-shadow 0.2s;
         }
 
-        .project-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+        .project-card:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
 
         .project-header {
             padding: 1.5rem;
@@ -346,10 +330,7 @@
             border: 1px solid var(--border);
         }
 
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
+        .project-links { display: flex; gap: 1rem; }
 
         .project-link {
             flex: 1;
@@ -367,14 +348,10 @@
             color: white;
         }
 
-        .view-code:hover {
-            background: var(--primary-dark);
-        }
+        .view-code:hover { background: var(--primary-dark); }
 
         /* Contact Section */
-        .contact {
-            background: var(--bg-light);
-        }
+        .contact { background: var(--bg-light); }
 
         .contact-info {
             display: grid;
@@ -415,9 +392,7 @@
             word-break: break-all;
         }
 
-        .contact-item a:hover {
-            color: var(--primary);
-        }
+        .contact-item a:hover { color: var(--primary); }
 
         /* Footer */
         .footer {
@@ -428,9 +403,7 @@
             border-top: 1px solid var(--border);
         }
 
-        .footer p {
-            margin-bottom: 0.5rem;
-        }
+        .footer p { margin-bottom: 0.5rem; }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -449,63 +422,34 @@
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             }
 
-            .nav-menu.active {
-                left: 0;
-            }
+            .nav-menu.active { left: 0; }
 
-            .hamburger {
-                display: flex;
-            }
+            .hamburger { display: flex; }
 
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(8px, 8px);
-            }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(8px, -8px); }
 
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(8px, -8px);
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .tagline {
-                font-size: 1.25rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            .tagline { font-size: 1.25rem; }
+            .section-title { font-size: 2rem; }
 
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
+            .btn { width: 100%; max-width: 300px; }
 
-            section {
-                padding: 3rem 0;
-            }
+            section { padding: 3rem 0; }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
+            .projects-grid { grid-template-columns: 1fr; }
 
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-            }
+            .contact-item { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -587,6 +531,7 @@
                         <li>RAG Systems</li>
                     </ul>
                 </div>
+
                 <div class="skill-category">
                     <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
                     <h3>Frontend & Backend</h3>
@@ -602,6 +547,7 @@
                         <li>CI/CD</li>
                     </ul>
                 </div>
+
                 <div class="skill-category">
                     <div class="category-icon"><i class="fas fa-server"></i></div>
                     <h3>Databases</h3>
@@ -613,6 +559,7 @@
                         <li>PostgreSQL</li>
                     </ul>
                 </div>
+
                 <div class="skill-category">
                     <div class="category-icon"><i class="fas fa-database"></i></div>
                     <h3>Data Engineering</h3>
@@ -623,6 +570,7 @@
                         <li>Data Warehousing</li>
                     </ul>
                 </div>
+
                 <div class="skill-category">
                     <div class="category-icon"><i class="fas fa-cloud"></i></div>
                     <h3>Cloud & Tools</h3>
@@ -710,9 +658,14 @@
             });
         });
 
-        // Projects Data
+        // Projects Data (UPDATED: Added Churn MLOps Platform)
         const projects = [
-           
+            {
+                title: "Churn MLOps Platform (Production-Style)",
+                description: "Production-style MLOps system for customer churn prediction with automated training, drift detection (PSI/KS), retraining triggers, MLflow experiment tracking, FastAPI inference, and a Streamlit monitoring dashboard. Dockerized with multi-service orchestration.",
+                tech: ["Python", "XGBoost", "Scikit-learn", "MLflow", "FastAPI", "Streamlit", "Docker", "Docker Compose", "Pytest", "SciPy", "Plotly"],
+                url: "YOUR_GITHUB_REPO_LINK_HERE"
+            },
             {
                 title: "Internal Knowledge Assistant (RAG System)",
                 description: "Secure RAG-powered internal knowledge chatbot built with Django REST Framework, FAISS vector search, and OpenAI LLM. Features role-based access, chat history with confidence scores, and explainable citations.",
@@ -725,7 +678,7 @@
                 tech: ["Python", "Gmail API", "Pub/Sub", "HuggingFace", "RoBERTa"],
                 url: "https://github.com/NMAnuda/email_classifier_extended"
             },
-             {
+            {
                 title: "Data Pipeline ETL AirFlow",
                 description: "ETL & Analytics Pipeline for E-Commerce Data: A Dockerized workflow using Airflow for daily orchestration, dbt for transformations into a Postgres star schema, and MinIO for S3-compatible storage.",
                 tech: ["Python", "Airflow", "dbt", "PostgreSQL", "Docker", "MinIO"],
@@ -737,7 +690,8 @@
                 tech: ["Python (FastAPI)", "Next.js", "LLMs", "NLP (spaCy/BERT)", "Pinecone", "AssemblyAI", "LangGraph"],
                 url: "https://github.com/itzTiru/LearnLinkAI-internal-system-client"
             },
-            { title: "Intelligent Healthcare Assistant",
+            {
+                title: "Intelligent Healthcare Assistant",
                 description: "A full-stack AI-driven healthcare platform featuring a medical chatbot, domain-specific search engine, and intelligent report analyzer. Users upload blood reports for regex-based extraction, Random Forest illness prediction, multi-task neural network drug recommendations, and real-time insights via Flask API and Next.js frontend, with auto-recommendations for trending conditions.",
                 tech: ["Python", "Flask API", "RandomForestClassifier", "Logistic Regression", "SentenceTransformer", "Multi-Task Neural Network", "NLP", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Next.js"],
                 url: "https://github.com/NMAnuda/AI-Enhanced_Medical_Assistant_Web_App"
@@ -765,7 +719,7 @@
         // Render Projects
         function renderProjects() {
             const projectsGrid = document.getElementById('projectsGrid');
-            
+
             projects.forEach(project => {
                 const projectCard = document.createElement('div');
                 projectCard.className = 'project-card';
